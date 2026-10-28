@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alexys Gaming | Mundo Gamer</title>
+
+    <style>
+        /* DISEÑO GENERAL */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0b1020;
+            color: white;
+            line-height: 1.6;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ENCABEZADO Y MENÚ */
+        header {
+            background-color: #11182b;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            border-bottom: 2px solid #00e5ff;
+        }
+
+        .logo {
+            color: #00e5ff;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 18px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #00e5ff;
+        }
+
+        /* PORTADA PRINCIPAL */
+        .portada {
+            min-height: 400px;
+            padding: 80px 8%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            background:
+                linear-gradient(90deg, #0b1020 15%, #0b1020dd 65%, #0b102055),
+                url("https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .portada h1 {
+            font-size: clamp(35px, 5vw, 55px);
+            color: #00e5ff;
+            margin-bottom: 15px;
+        }
+
+        .portada p {
+            max-width: 550px;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .boton {
+            display: inline-block;
+            background-color: #00e5ff;
+            color: #0b1020;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .boton:hover {
+            background-color: white;
+        }
+
+        /* SECCIONES */
+        section {
+            padding: 55px 8%;
+        }
+
+        .titulo {
+            color: #00e5ff;
+            font-size: 30px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .descripcion {
+            text-align: center;
+            color: #cbd5e1;
+            margin: 0 auto 30px;
+            max-width: 700px;
+        }
+
+        /* TARJETAS DE VIDEOJUEGOS */
+        .contenedor-juegos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .tarjeta {
+            background-color: #151e33;
+            border: 1px solid #263550;
+            border-radius: 14px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-7px);
+            border-color: #00e5ff;
+        }
+
+        .tarjeta img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .contenido-tarjeta {
+            padding: 20px;
+        }
+
+        .contenido-tarjeta h3 {
+            color: #00e5ff;
+            margin-bottom: 10px;
+        }
+
+        .contenido-tarjeta p {
+            color: #cbd5e1;
+        }
+
+        /* SOBRE NOSOTROS */
+        .sobre {
+            background-color: #11182b;
+        }
+
+        .sobre-contenido {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .sobre-contenido p {
+            color: #cbd5e1;
+            margin-bottom: 15px;
+        }
+
+        .lista {
+            display: inline-block;
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        .lista li {
+            margin: 8px 0;
+        }
+
+        /* SECCIÓN MULTIMEDIA */
+        .multimedia-contenedor {
+            max-width: 800px;
+            margin: auto;
+            background-color: #151e33;
+            padding: 20px;
+            border-radius: 14px;
+            border: 1px solid #263550;
+        }
+
+        .multimedia-contenedor video {
+            width: 100%;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .nota-video {
+            color: #cbd5e1;
+            margin-top: 12px;
+            text-align: center;
+        }
+
+        /* PIE DE PÁGINA */
+        footer {
+            background-color: #060a14;
+            padding: 25px;
+            text-align: center;
+            border-top: 2px solid #00e5ff;
+        }
+
+        footer p {
+            color: #cbd5e1;
+        }
+
+        footer strong {
+            color: #00e5ff;
+        }
+
+        /* AJUSTE PARA CELULARES */
+        @media (max-width: 600px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 8px;
+            }
+
+            .portada {
+                padding: 60px 6%;
+            }
+
+            section {
+                padding: 40px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header>
+        <div class="logo">ALEXYS GAMING</div>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#juegos">Videojuegos</a>
+            <a href="#nosotros">Acerca de</a>
+            <a href="#multimedia">Multimedia</a>
+        </nav>
+    </header>
+
+    <!-- PORTADA -->
+    <main>
+
+        <section class="portada" id="inicio">
+            <h1>BIENVENIDO AL MUNDO GAMER</h1>
+
+            <p>
+                Descubre videojuegos increíbles, explora nuevas aventuras
+                y conoce un mundo donde la diversión nunca termina.
+            </p>
+
+            <a href="#juegos" class="boton">
+                Explorar videojuegos
+            </a>
+        </section>
+
+        <!-- SECCIÓN DE VIDEOJUEGOS -->
+        <section id="juegos">
+
+            <h2 class="titulo">VIDEOJUEGOS DESTACADOS</h2>
+
+            <p class="descripcion">
+                Estos son algunos videojuegos populares que ofrecen
+                aventuras, desafíos y muchas horas de entretenimiento.
+            </p>
+
+            <div class="contenedor-juegos">
+
+                <article class="tarjeta">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=700&q=80"
+                        alt="Jugadores participando en un evento de videojuegos">
+
+                    <div class="contenido-tarjeta">
+                        <h3>Minecraft</h3>
+
+                        <p>
+                            Construye mundos, consigue recursos y explora
+                            escenarios llenos de posibilidades.
+                        </p>
+                    </div>
+
+                </article>
+
+                <article class="tarjeta">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=700&q=80"
+                        alt="Control de videojuegos y equipo gamer">
+
+                    <div class="contenido-tarjeta">
+                        <h3>Resident Evil</h3>
+
+                        <p>
+                            Vive aventuras de supervivencia, resuelve
+                            misterios y enfrenta grandes desafíos.
+                        </p>
+                    </div>
+
+                </article>
+
+                <
